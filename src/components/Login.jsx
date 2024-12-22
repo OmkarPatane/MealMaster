@@ -18,6 +18,9 @@ const Login = () => {
         { email, password }
       );
       localStorage.setItem("authToken", response.data.token);
+      // const myName= localStorage.setItem("UserName", response.data.name);
+      // console.log("This is testing name: ",myName)
+      
       navigate("/dashboard");
     } catch {
       setErrorMessage("Invalid email or password.");

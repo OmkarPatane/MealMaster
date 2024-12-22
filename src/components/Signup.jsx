@@ -1,9 +1,11 @@
 import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import { useUser } from "../context/UserContext"; // Import the custom hook
 import "../styles/Signup.css";
 
 const SignUp = () => {
+  const { setName } = useUser(); // Access the setName function from context
   const [name, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -27,7 +29,9 @@ const SignUp = () => {
         email,
         password,
       });
+
       setErrorMessage("");
+      setName(name); // Save the name in the context
       navigate("/login");
     } catch (error) {
       setErrorMessage("An error occurred. Please try again later.", error);
