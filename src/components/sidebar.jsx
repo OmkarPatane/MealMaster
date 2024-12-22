@@ -305,7 +305,7 @@ export const Sidebar = () => {
       img: meal.img,
       calories: meal.calories,
       mealType: meal.mealType,
-      date: "", // Initially empty, will be set later in Calendar
+      date: "", 
     });
     e.dataTransfer.setData("text/plain", data);
   };

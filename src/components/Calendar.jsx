@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import "../styles/calendar.css";
 import { useCalendarData } from "../context/CalendarContext";
-// import {Chart} from "./Chart"
 
 export const Calendar = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -39,16 +38,12 @@ export const Calendar = () => {
     const data = event.dataTransfer.getData("text/plain");
     const { name, img, calories, mealType } = JSON.parse(data);
 
-    // Add the dragged meal to the calendar on the dropped date
     addToCalendar(name, img, calories, mealType, date);
-    // console.log("Updated Calendar Data:", calendarData);
-    // Logs the data
   };
   useEffect(() => {
     console.log(calendarData);
   }, [calendarData]);
 
-  // Function to remove a specific meal from the calendar when clicked
   const handleRemove = (mealToRemove, day) => {
     removeFromCalendar(day, mealToRemove);
   };

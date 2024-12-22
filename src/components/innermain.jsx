@@ -1,15 +1,13 @@
 import { useState } from "react";
 import { Sidebar } from "./sidebar";
 import { ExpandableToggle } from "./expandableToggle";
-// import { ContentArea } from "./contentArea";
 import "../styles/innermain.css";
-import { Calendar } from "./Calendar"; // Import your components
+import { Calendar } from "./Calendar"; 
 import { Chart } from "./Chart";
 import { DailyPlan } from "./Dailyplan";
-// import { DailyPlan } from "./DailyPlan";
 
 export const Innermain = () => {
-  const [activeComponent, setActiveComponent] = useState("calendar"); // Track the active component
+  const [activeComponent, setActiveComponent] = useState("calendar");
 
   const renderComponent = () => {
     switch (activeComponent) {
@@ -30,7 +28,7 @@ export const Innermain = () => {
       <div className="innerdiv">
         <ExpandableToggle setActiveComponent={setActiveComponent} />
         <div className="content-area">
-          {renderComponent()} {/* Render the selected component */}
+          {renderComponent()}
         </div>
       </div>
     </div>

@@ -28,7 +28,6 @@
 
 /* Plan Section Header */
 .plan-section {
-  /* padding: 0; */
   margin-top: 8px;
 }
 
@@ -87,7 +86,6 @@
   color: #718096;
 }
 
-/* Modal Overlay - Positioned inside the main container */
 .modal-overlay {
   position: fixed;
   top: 0;

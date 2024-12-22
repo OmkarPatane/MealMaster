@@ -1,11 +1,10 @@
 import "../styles/navbar.css";
-// import { useNavigate} from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 export const Navbar = () => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   function handleClick() {
-    // setToggle(false)
-    // localStorage.removeItem('authToken');
-    // navigate("/login"); 
+    localStorage.removeItem('authToken');
+    navigate("/login"); 
     // This redirects the user if click
      
 

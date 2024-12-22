@@ -5,7 +5,7 @@
   align-items: center;
   padding: 5px;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-  position: sticky; /* Makes navbar sticky on top */
+  position: sticky; 
   top: 0;
   left: 0;
   background-color: #fff;
@@ -20,13 +20,11 @@
 
 .navbar > img:hover {
   transform: scale(1.1);
-  /* Slight brightening effect on hover */
 }
 
 .navbar > div > button {
   padding: 10px;
   background-color: transparent;
-  /* border: 2px solid #1977dc; */
   border: none;
   font-size: 20px;
   color: #1977dc;
@@ -35,7 +33,6 @@
 }
 
 .navbar > div > button:hover {
-  /* background-color: #1977dc; */
   background-color: rgb(214, 82, 82);
   color: white;
   transform: scale(1.05);
@@ -44,7 +41,6 @@
 .leftv {
   display: flex;
   gap: 15px;
-  /* justify-items: center; */
   align-items: center;
   padding: 10px;
 }
@@ -93,7 +89,7 @@ hr{
 .user:hover > img {
   scale: 1.1;
   transition: 0.8s ease;
-  transform: rotate(360deg); /* Add a small rotation to the user image */
+  transform: rotate(360deg); 
 }
 
 .hover-list {
@@ -109,7 +105,7 @@ hr{
   top: 30px;
   right: 0;
   opacity: 0;
-  pointer-events: none; /* Prevent interaction when hidden */
+  pointer-events: none;
   transform: translateY(-10px);
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
@@ -118,7 +114,7 @@ hr{
   display: block;
   opacity: 1;
   pointer-events: auto;
-  /* transform: translateY(0); */
+
 }
 
 .hover-list li {
@@ -130,5 +126,4 @@ hr{
 .hover-list li:hover {
   border-radius: 10px;
   background-color: #ddd;
-  /* transform: translateX(5px); */
 }

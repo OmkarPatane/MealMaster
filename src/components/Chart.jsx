@@ -1,4 +1,3 @@
-// import React from "react";
 import { Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -11,7 +10,7 @@ import {
   Legend,
   Filler,
 } from "chart.js";
-import { useCalendarData } from "../context/CalendarContext"; // Import CalendarContext hook
+import { useCalendarData } from "../context/CalendarContext";
 
 // Register required ChartJS components
 ChartJS.register(
@@ -26,10 +25,9 @@ ChartJS.register(
 );
 
 export const Chart = () => {
-  // Access calendarData from context
   const { calendarData } = useCalendarData();
 
-  // Aggregate and sort data by date
+  //sort data by date
   const aggregatedData = calendarData
     .reduce((acc, item) => {
       const existingEntry = acc.find((entry) => entry.date === item.date);
@@ -68,7 +66,7 @@ export const Chart = () => {
         pointHoverRadius: 8,
         pointBackgroundColor: "#FFFFFF",
         pointBorderColor: "#63A4FF",
-        tension: 0.4, // Smooth curve
+        tension: 0.4, 
       },
     ],
   };
@@ -76,7 +74,7 @@ export const Chart = () => {
   // Configure chart options
   const options = {
     responsive: true,
-    maintainAspectRatio: false, // Allow custom dimensions
+    maintainAspectRatio: false, 
     plugins: {
       legend: {
         position: "top",
@@ -122,13 +120,12 @@ export const Chart = () => {
   return (
     <div
       style={{
-        width: "100%", // Custom width
-        height: "45rem", // Custom height
-         // Center the chart
+        width: "100%", 
+        height: "45rem", 
         padding: "10px",
-        backgroundColor: "#f9f9f9", // Add a light background
+        backgroundColor: "#f9f9f9", 
         borderRadius: "8px",
-        boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)", // Add box shadow
+        boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
       }}
     >
       <Line data={chartData} options={options} />

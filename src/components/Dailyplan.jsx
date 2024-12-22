@@ -3,7 +3,6 @@ import { useCalendarData } from "../context/CalendarContext";
 import "../styles/DailyPlan.css";
 
 export const DailyPlan = () => {
-  // Helper function to format date correctly (moved above useState)
   const formatDate = (date) => {
     return new Date(
       date.getFullYear(),
@@ -13,9 +12,9 @@ export const DailyPlan = () => {
   };
 
   const { calendarData } = useCalendarData();
-  const [selectedDate, setSelectedDate] = useState(formatDate(new Date())); // Now formatDate is available here
-  const [modalData, setModalData] = useState(null); // State for the selected meal data
-  const [isModalOpen, setIsModalOpen] = useState(false); // State to open/close modal
+  const [selectedDate, setSelectedDate] = useState(formatDate(new Date()));
+  const [modalData, setModalData] = useState(null); 
+  const [isModalOpen, setIsModalOpen] = useState(false); 
 
   const filteredData = selectedDate
     ? calendarData.filter((item) => item.date === selectedDate)
@@ -32,13 +31,11 @@ export const DailyPlan = () => {
     { breakfast: [], lunch: [], dinner: [] }
   );
 
-  // Function to open the modal and set the selected meal data
   const openModal = (meal) => {
     setModalData(meal);
     setIsModalOpen(true);
   };
 
-  // Function to close the modal
   const closeModal = () => {
     setIsModalOpen(false);
     setModalData(null);
@@ -71,7 +68,7 @@ export const DailyPlan = () => {
                   <div
                     key={index}
                     className="meal-card"
-                    onClick={() => openModal(item)} // Open modal on card click
+                    onClick={() => openModal(item)} 
                   >
                     <img
                       src={item.img}

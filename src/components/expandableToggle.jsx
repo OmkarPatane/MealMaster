@@ -4,9 +4,6 @@ import "../styles/expandable.css";
 // eslint-disable-next-line react/prop-types
 export const ExpandableToggle = ({ setActiveComponent }) => {
   const [isExpanded, setIsExpanded] = useState(false);
-  // let ExpandIcon = ["Calender", "Chart", "Daily Plan", "Calories"];
-
-
 
   let ExpandIcon = [
     { label: "Calendar", key: "calendar" },
@@ -28,7 +25,7 @@ export const ExpandableToggle = ({ setActiveComponent }) => {
             onClick={() => setActiveComponent(ele.key)}
             key={ele.key}
             className="child-button"
-            style={{display:isExpanded?  "block": "none"}}
+            style={{ display: isExpanded ? "block" : "none" }}
           >
             {ele.label}
           </button>

@@ -1,22 +1,17 @@
 .maindiv{
-    /* border: 5px solid black; */
     display: flex;
     height: 50.9rem;
 
-    overflow-y: scroll; /* Enable scrolling */
-  scrollbar-width: none; /* For Firefox: Hides the scrollbar */
-  -ms-overflow-style: none; /* For Internet Explorer: Hides the scrollbar */
-    /* margin: 10px; */
+    overflow-y: scroll;
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
 }
 .innerdiv {
     width: 100%;
-    height: auto; /* Adjust height as needed */
-    /* border: 5px solid rgb(223, 8, 8); */
+    height: auto; 
     padding-left: 10px;
     padding-right: 10px;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
-    overflow: hidden; /* Ensures no scrolling */
-     /* Handles long text gracefully */
-     /* Prevents text wrapping (optional) */
+    overflow: hidden; 
 }
 

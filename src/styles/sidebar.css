@@ -51,17 +51,15 @@
 .show-data {
   display: flex;
   flex-direction: column;
-  /* gap: 10px; */
   padding: 5px;
   overflow-y: scroll;
   scrollbar-width: none; 
-  /* For Firefox */
  -ms-overflow-style: none; 
-  /* For Internet Explorer  */
+  
 }
 
 .show-data::-webkit-scrollbar {
-  display: none; /* For Chrome, Safari, and Edge */
+  display: none;
 }
 
 /* Data Box */
@@ -78,7 +76,6 @@
   height: 6rem;
   border: 1px solid #ddd;
   border-radius: 8px;
-  /* background-color: #6cbbae; */
   background-color: #5c5a5a;
   cursor: pointer;
   transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
@@ -89,7 +86,6 @@
   height: 50px;
   object-fit: cover;
   border-radius: 50%;
-  /* margin-bottom: 8px; */
   border: 2.8px solid rgb(219, 157, 178);
    transition:  0.3s ease-in-out;
   &:hover{
@@ -99,7 +95,6 @@
 
 .box:hover {
   background-color: rgb(213, 218, 223);
-  /* background-color: aliceblue; */
   transform: scale(1.02);
   color: black;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -115,7 +110,6 @@
   font-weight: bold;
   font-size: 16px;
   border-radius: 50%;
-  /* background-color: #16a085; */
   background-color: #277ecf;
   color: white;
   border: none;

@@ -1,9 +1,5 @@
 /* Calendar Container */
 .calendar-container {
-  /* width: 90%; */
-  /* max-width: 600px; */
-  /* margin: 20px auto; */
-  /* min-height: 100%; */
   font-family: Arial, sans-serif;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -19,7 +15,6 @@
   background-color: #1977dc;
   color: #ffffff;
   padding: 0px 10px;
-  /* font-size: 18px; */
   font-weight: bold;
 }
 
@@ -50,10 +45,6 @@
 }
 
 .calendar-cell {
- 
-
-
-
   background-color: white;
   border: 1px solid #ddd;
   height: 118px;
@@ -66,15 +57,6 @@
   position: relative;
   cursor: pointer;
 
-
-
-  /* padding: 10px;
-  border: 1px solid #ccc;
-  min-height: 100px;
-  position: relative;
-  text-align: center;
-  background-color: white;
-  cursor: pointer; */
 }
 
 .calendar-cell:hover {
@@ -86,7 +68,6 @@
 }
 
 .data {
-  /* cursor: grabbing; */
   display: grid;
   grid-template-columns: repeat(4,1fr);
   position: absolute;
@@ -96,11 +77,7 @@
   font-size: 12px;
   color: #007bff;
   text-align: center;
-  /* border: 1px solid b; */
-  /* margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px; */
+  
 }
 
 .data img {
@@ -124,7 +101,6 @@
   font-weight: 600;
   border-radius: 10px;
   margin-right: 2px;
-  /* padding: 5px 0px; */
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 

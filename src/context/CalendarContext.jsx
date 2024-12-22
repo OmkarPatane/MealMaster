@@ -1,13 +1,11 @@
 import { useState, useEffect } from "react";
 
 export const useCalendarData = () => {
-  // Load initial data from localStorage or initialize an empty array
   const [calendarData, setCalendarData] = useState(() => {
     const storedData = localStorage.getItem("calendarData");
     return storedData ? JSON.parse(storedData) : [];
   });
 
-  // Save calendarData to localStorage whenever it changes
   useEffect(() => {
     localStorage.setItem("calendarData", JSON.stringify(calendarData));
   }, [calendarData]);
