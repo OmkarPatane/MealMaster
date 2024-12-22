@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 import '../styles/Login.css';
@@ -29,7 +29,7 @@ const Login = () => {
         <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
         <button type="submit">Login</button>
         {errorMessage && <p className="error-message">{errorMessage}</p>}
-        <p>Don't have an account? <Link to="/signup">Register</Link></p>
+        <p>Dont have an account? <Link to="/signup">Register</Link></p>
       </form>
     </div>
   );

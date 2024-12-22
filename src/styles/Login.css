@@ -1,10 +1,16 @@
 /* Login.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Ensures body and html take full viewport height */
+    overflow: hidden; /* Prevent scrolling */
+}
 .login-container {
     height: 100vh; /* Full viewport height */
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('/public/image1.jpg'); /* Replace with your image URL */
+    background-image: url('https://ik.imagekit.io/m9qnay09g/p1.jpg?updatedAt=1734771761231'); /* Replace with your image URL */
     background-size: cover; /* Makes the image cover the entire page */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     background-position: center; /* Centers the image */
@@ -19,8 +25,8 @@
     padding: 20px; /* Space around form content */
     
     border-radius: 10px; /* Smooth rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    backdrop-filter: blur(5px); /* Adds a slight blur effect for a frosted glass look */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.767); /* Subtle shadow for depth */
+    backdrop-filter: blur(8px); /* Adds a slight blur effect for a frosted glass look */
     box-sizing: border-box; /* Ensures padding is included in width/height calculation */
 }
 

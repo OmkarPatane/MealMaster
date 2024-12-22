@@ -1,11 +1,21 @@
 /* styles/SignUp.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Ensures body and html take full viewport height */
+    overflow: hidden; /* Prevent scrolling */
+}
+
 .signup-container {
+    margin: 0;
+    padding: 0;
     height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
     display: flex;
     justify-content: center;
     align-items: center;
     background-image: url('/public/image2.jpg'); /* Replace with your image URL */
-    background-size: cover; /* Makes the image cover the entire page */
+    background-size: cover; /* Makes the image cover the entire container */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     background-position: center; /* Centers the image */
 }

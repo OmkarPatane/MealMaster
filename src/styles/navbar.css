@@ -1,0 +1,134 @@
+.navbar {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  position: sticky; /* Makes navbar sticky on top */
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+
+.navbar > img {
+  width: 14rem;
+  transition: transform 0.4s ease-in-out;
+}
+
+.navbar > img:hover {
+  transform: scale(1.1);
+  /* Slight brightening effect on hover */
+}
+
+.navbar > div > button {
+  padding: 10px;
+  background-color: transparent;
+  /* border: 2px solid #1977dc; */
+  border: none;
+  font-size: 20px;
+  color: #1977dc;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.navbar > div > button:hover {
+  /* background-color: #1977dc; */
+  background-color: rgb(214, 82, 82);
+  color: white;
+  transform: scale(1.05);
+}
+
+.leftv {
+  display: flex;
+  gap: 15px;
+  /* justify-items: center; */
+  align-items: center;
+  padding: 10px;
+}
+
+hr{
+  height: 30px;
+  font-weight: bold;
+  background-color: black;
+  width: 1px;
+}
+
+.left-div {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-left {
+  padding: 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-left:hover {
+  background-color: #1977dc;
+  color: white;
+  transform: scale(1.05);
+}
+
+.user {
+  display: flex;
+  gap: 20px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.user:hover {
+  transform: scale(1.05);
+}
+
+.user > img {
+  scale: 1.5;
+  transition: transform 0.8s ease;
+}
+
+.user:hover > img {
+  scale: 1.1;
+  transition: 0.8s ease;
+  transform: rotate(360deg); /* Add a small rotation to the user image */
+}
+
+.hover-list {
+  width: 8rem;
+  display: none;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style-type: none;
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  position: absolute;
+  border-radius: 10px;
+  top: 30px;
+  right: 0;
+  opacity: 0;
+  pointer-events: none; /* Prevent interaction when hidden */
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.user:hover .hover-list {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+  /* transform: translateY(0); */
+}
+
+.hover-list li {
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hover-list li:hover {
+  border-radius: 10px;
+  background-color: #ddd;
+  /* transform: translateX(5px); */
+}

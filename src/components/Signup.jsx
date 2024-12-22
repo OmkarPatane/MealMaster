@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import '../styles/Signup.css';
@@ -26,7 +26,7 @@ const SignUp = () => {
       setErrorMessage('');
       navigate('/login');
     } catch (error) {
-      setErrorMessage('An error occurred. Please try again later.');
+      setErrorMessage('An error occurred. Please try again later.',error);
     } finally {
       setIsLoading(false);
     }
