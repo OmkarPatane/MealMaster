@@ -1,0 +1,63 @@
+/* Login.css */
+.login-container {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/public/image1.jpg'); /* Replace with your image URL */
+    background-size: cover; /* Makes the image cover the entire page */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Consistent spacing between form elements */
+    width: 100%;
+    max-width: 400px; /* Limits form width for better layout */
+    padding: 20px; /* Space around form content */
+    
+    border-radius: 10px; /* Smooth rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    backdrop-filter: blur(5px); /* Adds a slight blur effect for a frosted glass look */
+    box-sizing: border-box; /* Ensures padding is included in width/height calculation */
+}
+
+.login-form input {
+    width: 100%; /* Makes the input boxes span the container width */
+    padding: 12px 15px; /* Adequate padding for readability */
+    font-size: 16px; /* Consistent font size */
+    border: 1px solid #ccc; /* Subtle border for inputs */
+    border-radius: 5px; /* Rounded corners for cleaner design */
+    box-sizing: border-box; /* Ensures padding is included in width calculation */
+    transition: border-color 0.3s ease; /* Smooth effect on focus */
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly opaque background for inputs */
+}
+
+.login-form input:focus {
+    border-color: #007bff; /* Highlighted border on focus */
+    outline: none; /* Removes default browser outline */
+}
+
+.login-form button {
+    padding: 12px 15px; /* Matches input padding for consistency */
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.login-form button:hover {
+    background-color: #0056b3; /* Darker blue for hover effect */
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    text-align: center; /* Centers the error message */
+}
