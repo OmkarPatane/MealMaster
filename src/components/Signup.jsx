@@ -24,7 +24,8 @@ const SignUp = () => {
     setIsLoading(true);
 
     try {
-      await axios.post("https://backend1-ly8d.onrender.com/api/register", {
+      await axios.post("https://mealplanner-backend-8v3d.onrender.com/api/register", {
+        // await axios.post("https://backend1-ly8d.onrender.com/api/register", {
         name,
         email,
         password,

@@ -1,0 +1,97 @@
+.floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgb(105, 178, 182);
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  /* border: 5px solid rgb(235, 235, 237); */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: transform 0.4s ease-in-out;
+}
+
+.floating-button:hover {
+  transform: scale(1.5);
+}
+
+.floating-button img {
+  width: 108%;
+  height: 90%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.response-text p{
+  margin: 0;
+  text-align: left;
+  padding: 12px;
+}
+
+.content-box {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  transform: scale(0);
+  transform-origin: bottom right;
+  width: 400px;
+  /* overflow: scroll; */
+  /* height: 80%; */
+  background: #f1f1f1;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  transition: transform 0.4s ease-in-out;
+  z-index: 999;
+}
+
+.content-box.active {
+  transform: scale(1);
+  margin-right: 40px;
+}
+
+.response-text {
+  padding: 2%;
+  /* height: 50rem; */
+  /* max-height: 50rem; */
+  text-align: left;
+}
+
+.content-box h2 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.content-box input {
+  width: 100%;
+  padding: 10px;
+  margin: 15px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.content-box button {
+  padding: 0px 10px;
+  background-color: #2868bd;
+  color: white;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.content-box button:hover {
+  background-color: #218838;
+}
+
+.input-btn {
+  display: flex;
+  align-items: center;
+}

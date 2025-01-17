@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Innermain } from "./innermain";
 import { Navbar } from "./navbar";
 import "../styles/dashboard.css";
+import { AI_Bot } from "./AI_Bot";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -18,6 +19,7 @@ const Dashboard = () => {
     <div>
       <Navbar />
       <Innermain />
+      <AI_Bot/>
       
       {/* <p>{token}</p> */}
     </div>

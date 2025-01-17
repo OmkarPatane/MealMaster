@@ -14,7 +14,8 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        "https://backend1-ly8d.onrender.com/api/login",
+        "https://mealplanner-backend-8v3d.onrender.com/api/login",
+        // "https://backend1-ly8d.onrender.com/api/login",
         { email, password }
       );
       localStorage.setItem("authToken", response.data.token);
