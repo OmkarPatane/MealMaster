@@ -1,11 +1,11 @@
 import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import { useUser } from "../context/UserContext"; // Import the custom hook
+// import { useUser } from "../context/UserContext"; // Import the custom hook
 import "../styles/Signup.css";
 
 const SignUp = () => {
-  const { setName } = useUser(); // Access the setName function from context
+  // const { setName } = useUser(); // Access the setName function from context
   const [name, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -24,7 +24,7 @@ const SignUp = () => {
     setIsLoading(true);
 
     try {
-      await axios.post(
+      const response= await axios.post(
         "https://meal-planner-backend-0rkj.onrender.com/register",
         {
           // await axios.post("https://mealplanner-backend-8v3d.onrender.com/api/register", {
@@ -34,9 +34,10 @@ const SignUp = () => {
           password,
         }
       );
-
+      navigate("/login");
+      console.log(response.data)
       setErrorMessage("");
-      setName(name); // Save the name in the context
+      // setName(name); // Save the name in the context
       navigate("/login");
     } catch (error) {
       setErrorMessage("An error occurred. Please try again later.", error);
@@ -69,6 +70,7 @@ const SignUp = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
+          autoComplete={password}
         />
         <input
           type="password"
@@ -76,6 +78,7 @@ const SignUp = () => {
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
           required
+          autoComplete={confirmPassword}
         />
         <button type="submit" disabled={isLoading}>
           {isLoading ? "Signing Up..." : "Sign Up"}
