@@ -1,16 +1,26 @@
-// import { useEffect } from "react";
 import "../styles/mainPage.css";
 import { useNavigate } from "react-router-dom";
 
 export const MainPage = () => {
   const navigate = useNavigate();
 
-  
-
   const handleAboutClick = () => {
-    document
-      .getElementById("about-section")
-      
+    const aboutSection = document.getElementById("about-section");
+    if (aboutSection) {
+      const currentScroll = window.scrollY;
+      const aboutPosition = aboutSection.offsetTop;
+
+      // Toggle scrolling: If at About section, go back to top
+      if (currentScroll >= aboutPosition - 50) {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        aboutSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
+  const handleHomeClick = () => {
+    window.location.reload();
   };
 
   const handleLoginClick = () => {
@@ -22,6 +32,9 @@ export const MainPage = () => {
       <nav className="main-navbar">
         <div className="navbar-logo">Meal Planner</div>
         <div className="navbar-buuttons">
+          <button className="navbar-buutton" onClick={handleHomeClick}>
+            Home
+          </button>
           <button className="navbar-buutton" onClick={handleLoginClick}>
             Login
           </button>
@@ -68,22 +81,6 @@ export const MainPage = () => {
             Our app combines technology and personalized nutrition to help you
             create tailored meal plans, track your daily intake, and achieve
             your fitness goals effortlessly.
-          </div>
-        </div>
-      </div>
-
-      <div className="main-section video-section" id="video-section">
-        <video autoPlay loop muted>
-          <source
-            src="https://ik.imagekit.io/d5ik6mphn/darkvideo.mp4?updatedAt=1734899444041"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </video>
-        <div className="section-content">
-          <div className="section-title">
-            🍴 Transform Every Meal into a Masterpiece – Plan Smart, Eat
-            Healthy, Live Happy with Meal Master! 🌟
           </div>
         </div>
       </div>

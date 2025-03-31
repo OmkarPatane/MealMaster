@@ -3,12 +3,12 @@ import { createContext, useState, useContext } from "react";
 const UserContext = createContext();
 // eslint-disable-next-line react/prop-types
 export const UserProvider = ({ children }) => {
-  const [name, setName] = useState("");
+  const [name] = useState(localStorage.getItem("UserName"));
 
   return (
-    <UserContext.Provider value={{ name, setName }}>
-      {children}
-    </UserContext.Provider>
+    <>
+      <UserContext.Provider value={{ name }}>{children}</UserContext.Provider>
+    </>
   );
 };
 

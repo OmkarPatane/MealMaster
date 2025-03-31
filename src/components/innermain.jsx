@@ -4,7 +4,7 @@ import { ExpandableToggle } from "./expandableToggle";
 import "../styles/innermain.css";
 import { Calendar } from "./Calendar"; 
 import { Chart } from "./Chart";
-import { DailyPlan } from "./Dailyplan";
+import { DailyPlan } from "./DailyPlan.jsx";
 
 export const Innermain = () => {
   const [activeComponent, setActiveComponent] = useState("calendar");

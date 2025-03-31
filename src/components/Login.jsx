@@ -7,26 +7,41 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [loading, setLoading] = useState(false); // Add loading state
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true); // Start loading
 
     try {
       const response = await axios.post(
-        "https://mealplanner-backend-8v3d.onrender.com/api/login",
-        // "https://backend1-ly8d.onrender.com/api/login",
-        { email, password }
+        "https://meal-planner-backend-0rkj.onrender.com/login",
+        {
+          email,
+          password,
+        }
       );
       localStorage.setItem("authToken", response.data.token);
-      // const myName= localStorage.setItem("UserName", response.data.name);
-      // console.log("This is testing name: ",myName)
-      
+      localStorage.setItem("UserName", response.data.name);
+      localStorage.setItem("role", response.data.role);
       navigate("/dashboard");
-    } catch {
-      // navigate("/dashboard"); 
-      // chaneg this any how -----------------------------------------------CHANGE
-      setErrorMessage("Invalid email or password.");
+    } catch (error) {
+      if (axios.isAxiosError(error) && error.response) {
+        if (error.response.status === 401) {
+          setErrorMessage(
+            error.response.data.message || "Invalid email or password."
+          );
+        } else if (error.response.status === 404) {
+          setErrorMessage("User not found");
+        } else {
+          setErrorMessage("An unexpected error occurred.");
+        }
+      } else {
+        setErrorMessage("Failed to connect to the server.");
+      }
+    } finally {
+      setLoading(false); // Stop loading
     }
   };
 
@@ -47,8 +62,11 @@ const Login = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
+          autoComplete={password}
         />
-        <button type="submit">Login</button>
+        <button type="submit" disabled={loading}>
+          {loading ? "Logging in..." : "Login"}
+        </button>
         {errorMessage && <p className="error-message">{errorMessage}</p>}
         <p>
           Dont have an account? <Link to="/signup">Register</Link>

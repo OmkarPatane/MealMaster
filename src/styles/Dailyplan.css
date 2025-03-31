@@ -25,22 +25,32 @@
   border: 1px solid #ddd;
   border-radius: 5px;
 }
+.data-div{
+  display: flex;
+  gap: 8%;
+  box-sizing: border-box;
 
+}
 /* Plan Section Header */
 .plan-section {
+  /* display: flex; */
+  /* flex-wrap: wrap; */
   margin-top: 8px;
 }
 
 .plan-section h3 {
   font-size: 18px;
   color: #4a5568;
+  text-align: center;
   margin-bottom: 10px;
 }
 
 /* Meal Items Container */
 .meal-items {
-  display: flex;
-  flex-wrap: wrap;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  /* border: 1px solid black; */
+  padding: 10px;
   gap: 15px;
 }
 
@@ -51,6 +61,7 @@
   align-items: center;
   width: 150px;
   padding: 5px;
+  margin-bottom: 10px;
   border: 1px solid #ddd;
   border-radius: 8px;
   background-color: #fff;

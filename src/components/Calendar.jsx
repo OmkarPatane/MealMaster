@@ -4,6 +4,7 @@ import { useCalendarData } from "../context/CalendarContext";
 
 export const Calendar = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
+  const today = new Date().setHours(0, 0, 0, 0);
   const { calendarData, addToCalendar, removeFromCalendar } = useCalendarData();
 
   const getDaysInMonth = (date) => {
@@ -36,16 +37,18 @@ export const Calendar = () => {
   const handleDrop = (event, date) => {
     event.preventDefault();
     const data = event.dataTransfer.getData("text/plain");
-    const { name, img, calories, mealType } = JSON.parse(data);
+    const { name, img, calories, mealType, recipe, ingredients } =
+      JSON.parse(data);
 
-    addToCalendar(name, img, calories, mealType, date);
+    addToCalendar(name, img, calories, mealType, date, recipe, ingredients);
   };
+
   useEffect(() => {
     console.log(calendarData);
   }, [calendarData]);
 
-  const handleRemove = (mealToRemove, day) => {
-    removeFromCalendar(day, mealToRemove);
+  const handleRemove = (id) => {
+    removeFromCalendar(id);
   };
 
   return (
@@ -53,39 +56,50 @@ export const Calendar = () => {
       <div className="calendar-header">
         <button onClick={handlePrevMonth}>Previous</button>
         <h2>
-          {currentDate.toLocaleString("default", { month: "long" })}{" "}
+          {currentDate.toLocaleString("default", { month: "long" })}
           {currentDate.getFullYear()}
         </h2>
         <button onClick={handleNextMonth}>Next</button>
       </div>
 
       <div className="calendar-grid">
-        {days.map((day, index) => (
-          <div
-            key={index}
-            className="calendar-cell"
-            onDrop={(e) => handleDrop(e, day.toDateString())}
-            onDragOver={(e) => e.preventDefault()}
-          >
-            <div>{day.getDate()}</div>
-            <div className="data">
-              {calendarData
-                .filter((item) => item.date === day.toDateString())
-                .map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="meal"
-                    onClick={() => handleRemove(item, day.toDateString())} // Clicking on the meal will remove it
-                  >
-                    <img src={item.img} alt={item.name} />
-                    <p>{item.name}</p>
-                    {/* <p>{item.mealType} himanshu</p> */}
-                    <p>{item.calories} cal</p>
-                  </div>
-                ))}
+        {days.map((day, index) => {
+          const isPastDate = day.setHours(0, 0, 0, 0) < today;
+          return (
+            <div
+              key={index}
+              className={`calendar-cell ${
+                day < new Date().setHours(0, 0, 0, 0) ? "past-date" : ""
+              }`}
+              onDrop={(e) => {
+                if (day >= new Date().setHours(0, 0, 0, 0))
+                  handleDrop(e, day.toDateString());
+              }}
+              onDragOver={(e) => {
+                if (day >= new Date().setHours(0, 0, 0, 0)) e.preventDefault();
+              }}
+            >
+              <div>{day.getDate()}</div>
+              <div className="data">
+                {calendarData
+                  .filter((item) => item.date === day.toDateString())
+                  .map((item, idx) => (
+                    <div
+                      key={idx}
+                      className="meal"
+                      onClick={
+                        !isPastDate ? () => handleRemove(item._id) : undefined
+                      }
+                    >
+                      <img src={item.img} alt={item.name} />
+                      <p>{item.name}</p>
+                      {/* <p>{item.calories} cal</p> */}
+                    </div>
+                  ))}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

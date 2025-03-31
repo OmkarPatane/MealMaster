@@ -24,12 +24,16 @@ const SignUp = () => {
     setIsLoading(true);
 
     try {
-      await axios.post("https://mealplanner-backend-8v3d.onrender.com/api/register", {
-        // await axios.post("https://backend1-ly8d.onrender.com/api/register", {
-        name,
-        email,
-        password,
-      });
+      await axios.post(
+        "https://meal-planner-backend-0rkj.onrender.com/register",
+        {
+          // await axios.post("https://mealplanner-backend-8v3d.onrender.com/api/register", {
+          // await axios.post("https://backend1-ly8d.onrender.com/api/register", {
+          name,
+          email,
+          password,
+        }
+      );
 
       setErrorMessage("");
       setName(name); // Save the name in the context
